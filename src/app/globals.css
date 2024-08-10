@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wdth,wght@62.5..100,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wdth,wght@0,62.5..100,100..900;1,62.5..100,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -9,13 +9,18 @@
 	--background-end-rgb: 255, 255, 255;
 }
 
+/* Default Font */
+body {
+	font-family: "Poppins", sans-serif;
+}
+
 /* Main */
 
 .heroTwo {
 	clip-path: circle(0%);
 	animation: circleReveal linear forwards;
 	animation-timeline: scroll();
-	animation-range: 0 90vh;
+	animation-range: 0 100vh;
 }
 
 @keyframes circleReveal {
@@ -40,12 +45,7 @@
 	/*   --bgColor: black;
   --borderColor: hsl(120 100% 20%); */
 	background-color: var(--bgColor);
-	background-image:
-/*     linear-gradient(
-      var(--bgColor),
-      transparent 35% 65%,
-      var(--bgColor)
-    ), */ linear-gradient(
+	background-image: linear-gradient(
 			transparent calc(var(--blockSize) - var(--borderWidth)),
 			var(--borderColor) calc(var(--blockSize) - var(--borderWidth))
 		),
@@ -55,8 +55,7 @@
 			var(--borderColor) calc(var(--blockSize) - var(--borderWidth))
 		);
 
-	background-size:
-/*     100% 100%, */ var(--blockSize) var(--blockSize),
+	background-size: var(--blockSize) var(--blockSize),
 		var(--blockSize) var(--blockSize);
 	background-repeat: round;
 	animation: gridBgMove 2s infinite linear;
@@ -64,8 +63,7 @@
 
 @keyframes gridBgMove {
 	to {
-		background-position-y:
-/*       0, */ var(--blockSize);
+		background-position-y: var(--blockSize);
 	}
 }
 
@@ -150,11 +148,6 @@
 			calc(100% + (var(--trailHeight) * var(--blockSize)));
 	}
 }
-@keyframes gridBgMove {
-	to {
-		background-position-y: var(--blockSize);
-	}
-}
 
 /* Text Hover Effect */
 .textHoverEffect {
@@ -166,7 +159,7 @@
 	font-family: "Noto Sans", sans-serif;
 	user-select: none;
 }
-span {
+.textHoverEffect span {
 	--add: 0;
 	display: inline-block;
 	line-height: 100%;
@@ -174,19 +167,35 @@ span {
 	font-weight: calc(300 + 600 * var(--add));
 	font-variation-settings: "wdth" calc(62.5 + 37.5 * var(--add));
 	text-transform: uppercase;
-	font-size: clamp(3.5rem, 12.5vw + 1px, 10rem);
+	font-size: clamp(4.5rem, 12.5vw + 1px, 10rem);
 	color: hsl(99deg, 1%, calc(90% + 20% * var(--add)));
 	text-shadow: 0 0 max(25px, 1.3020833333vw) hsla(0, 0%, 100%, 0.8);
 	transition: font-weight 0.25s, font-variation-settings 0.25s;
 }
-span:hover {
+.textHoverEffect span:hover {
 	--add: 1;
 }
-span:hover + span,
-span:has(+ span:hover) {
+.textHoverEffect span:hover + span,
+.textHoverEffect span:has(+ span:hover) {
 	--add: 0.5;
 }
-span:hover + span + span,
-span:has(+ span + span:hover) {
+.textHoverEffect span:hover + span + span,
+.textHoverEffect span:has(+ span + span:hover) {
 	--add: 0.25;
+}
+
+.linkIcon {
+	background-image: linear-gradient(
+			-45deg,
+			transparent calc(50% - 1px),
+			black calc(50% - 1px) calc(50% + 1px),
+			transparent calc(50% + 1px)
+		),
+		linear-gradient(black 2px, transparent 2px),
+		linear-gradient(-90deg, black 2px, transparent 2px);
+}
+
+.linkUnderline:hover::before,
+.linkIcon:hover + .linkUnderline::before {
+	transform: translateX(0%);
 }

@@ -2,7 +2,7 @@ import React from "react"
 
 export default function HeroTwo() {
 	return (
-		<div className="heroTwo | grid *:[grid-area:1/-1] place-items-center h-svh sticky top-0">
+		<div className="heroTwo | grid *:[grid-area:1/-1] place-items-center h-screen sticky top-0">
 			<div className="bgGridWrapperTwo horizontal"></div>
 			<div className="bgGridWrapperTwo vertical"></div>
 			<div className="textHoverEffect">

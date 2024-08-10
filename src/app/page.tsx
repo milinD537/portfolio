@@ -7,7 +7,7 @@ export default function Home() {
 	return (
 		<div className="wrapper">
 			<section className="hero-section">
-				<div className="heroWrapper | h-[200svh] grid *:[grid-area:1/-1]">
+				<div className="heroWrapper | h-[200vh] grid *:[grid-area:1/-1]">
 					<HeroOne />
 					<HeroTwo />
 				</div>
