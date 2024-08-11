@@ -1,8 +1,7 @@
 import type { Metadata } from "next"
-import { Inter } from "next/font/google"
+import Lenis from "./components/Lenix"
 import "./globals.css"
-
-const inter = Inter({ subsets: ["latin"] })
+import { trap } from "@/utils/fonts"
 
 export const metadata: Metadata = {
 	title: "Milind's Portfolio",
@@ -16,7 +15,11 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
-			<body className={inter.className}>{children}</body>
+			<body
+				className={`${trap.variable} font-trap min-h-screen grid *:[grid-area:1/-1]`}
+			>
+				<Lenis>{children}</Lenis>
+			</body>
 		</html>
 	)
 }
