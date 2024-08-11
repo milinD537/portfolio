@@ -107,7 +107,7 @@ export default function Hero() {
 			</div>
 
 			<div className="flex gap-3">
-				<p className="text-white text-xl">scroll</p>
+				{/* <p className="text-white text-xl"></p> */}
 				<MouseScroll className="animate-[scrollIconBounce_3s_infinite]" />
 			</div>
 		</section>

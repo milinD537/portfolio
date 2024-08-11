@@ -99,7 +99,7 @@
 		var(--blockSize) var(--blockSize);
 	/* background-repeat: round; */
 	/* background-position-x: calc(var(--blockSize) * 0.5 * -1); */
-	/* animation: gridBgMove 3s infinite linear; */
+	animation: gridBgMove 3s infinite linear;
 	transform-origin: center;
 	transform: rotateX(60deg);
 }
