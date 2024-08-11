@@ -1,4 +1,8 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+	basePath: "/portfolio-marknox",
+	output: "export",
+	reactStrictMode: true,
+}
 
-export default nextConfig;
+export default nextConfig
