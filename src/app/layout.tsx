@@ -1,7 +1,11 @@
 import type { Metadata } from "next"
-import Lenis from "./components/Lenix"
+import Lenis from "../components/Lenix"
 import "./globals.css"
 import { trap } from "@/utils/fonts"
+import { Provider } from "jotai"
+import GridBackground from "@/components/GridBackground"
+import SideNav from "@/components/SideNav"
+import TransitionSlider from "@/components/TransitionSlider"
 
 export const metadata: Metadata = {
 	title: "Milind's Portfolio",
@@ -18,7 +22,16 @@ export default function RootLayout({
 			<body
 				className={`${trap.variable} font-trap min-h-screen grid *:[grid-area:1/-1]`}
 			>
-				<Lenis>{children}</Lenis>
+				<Provider>
+					<Lenis>
+						<GridBackground />
+						<div className="gridBgFade | h-screen sticky top-0 bg-[radial-gradient(ellipse_at_50%_0,red,var(--background)_75%)]s z-10"></div>
+						<div className="wrapper | z-20 max-w-screen-[1440px] relative">
+							<SideNav />
+							<TransitionSlider>{children}</TransitionSlider>
+						</div>
+					</Lenis>
+				</Provider>
 			</body>
 		</html>
 	)

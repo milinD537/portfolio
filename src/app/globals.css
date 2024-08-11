@@ -7,6 +7,21 @@
 	inherits: false;
 	initial-value: 0%;
 }
+/* @property --heroTextColorStop {
+	syntax: "<percentage>";
+	inherits: false;
+	initial-value: 4%;
+}
+@property --heroTextColorOne {
+	syntax: "<color>";
+	inherits: false;
+	initial-value: hsl(0, 0%, 100%, 4%);
+}
+@property --heroTextColorTwo {
+	syntax: "<color>";
+	inherits: false;
+	initial-value: hsl(0, 0%, 0%, 4%);
+} */
 
 :root {
 	--foreground-rgb: 0, 0, 0;
@@ -16,11 +31,27 @@
 	--background: hsl(274, 75%, 3%);
 }
 
-/* Main */
-body {
-	cursor: url(/public/images/cursor/default.png) 0 0, auto;
-	/* cursor: pointer; */
+::-webkit-scrollbar {
+	display: none;
 }
+
+/* Main */
+
+/* .heroSection > h1 > span > span {
+	--heroTextColorStop: 4%;
+	color: transparent;
+	-webkit-text-stroke: 1px hsl(0, 0%, 90%, 0.1);
+	background-clip: text;
+	background-image: linear-gradient(
+		var(--heroTextColorOne),
+		var(--heroTextColorTwo)
+	);
+	transition: --heroTextColorOne 0.25, --heroTextColorTwo 0.25;
+}
+.heroSection > h1 > span > span:hover {
+	--heroTextColorOne: hsl(0, 0%, 100%, 50%);
+	--heroTextColorTwo: hsl(0, 0%, 0%, 50%);
+} */
 
 .heroTwo {
 	clip-path: circle(0%);
@@ -84,122 +115,6 @@ body {
 		linear-gradient(30deg, var(--background) 10%, transparent 25%);
 }
 
-@keyframes gridBgMove {
-	to {
-		background-position-y: var(--blockSize), var(--blockSize);
-	}
-}
-
-/* .bgGridWrapperTwo.horizontal {
-	--direction: to bottom;
-	mask-image: linear-gradient(hsl(0 0% 0% / 0.1), hsl(0 0% 0% / 0.1));
-}
-.bgGridWrapperTwo.vertical {
-	--direction: to right;
-	--trailHeight: 3;
-	--lineOne: 2;
-	--lineTwo: 6;
-	--lineThree: 10;
-	mask-image: linear-gradient(hsl(0 0% 0% / 0.1), hsl(0 0% 0% / 0.1)),
-		linear-gradient(hsl(0 0% 0% / 0.1), hsl(0 0% 0% / 1)),
-		linear-gradient(hsl(0 0% 0% / 0.1), hsl(0 0% 0% / 1)),
-		linear-gradient(hsl(0 0% 0% / 0.1), hsl(0 0% 0% / 1));
-	mask-size: 100%,
-		var(--borderWidth) calc(var(--blockSize) * var(--trailHeight)),
-		var(--borderWidth) calc(var(--blockSize) * var(--trailHeight)),
-		var(--borderWidth) calc(var(--blockSize) * var(--trailHeight));
-	-webkit-mask-position-x: 0,
-		calc((var(--blockSize) * var(--lineOne)) - var(--borderWidth)),
-		calc((var(--blockSize) * var(--lineTwo)) - var(--borderWidth)),
-		calc((var(--blockSize) * var(--lineThree)) - var(--borderWidth));
-	mask-repeat: no-repeat;
-	animation: gridMaskMove 12s linear infinite;
-}
-.bgGridWrapperTwo {
-	--blockSize: 32px;
-	--borderWidth: 2px;
-
-	width: 100%;
-	height: 100%;
-	background-image: linear-gradient(
-			var(--bgColor),
-			transparent 25% 75%,
-			var(--bgColor)
-		),
-		linear-gradient(
-			var(--direction),
-			transparent calc(var(--blockSize) - var(--borderWidth)),
-			var(--borderColor) calc(var(--blockSize) - var(--borderWidth))
-		);
-	background-size: 100%, var(--blockSize) var(--blockSize);
-}
-
-.heroTwo {
-	--bgColor: hsl(229, 84%, 5%);
-	--borderColor: hsl(233, 60%, 40%);
-	background-color: var(--bgColor);
-}
-
-@keyframes gridMaskMove {
-	from {
-		-webkit-mask-position-y: 0,
-			calc(var(--trailHeight) * var(--blockSize) * -1);
-	}
-	50% {
-		-webkit-mask-position-y: 0,
-			calc(var(--trailHeight) * var(--blockSize) * -1),
-			calc(100% + (var(--trailHeight) * var(--blockSize))),
-			calc(var(--trailHeight) * var(--blockSize) * -1);
-	}
-	80% {
-		-webkit-mask-position-y: 0,
-			calc(80% + (var(--trailHeight) * var(--blockSize))),
-			calc(100% + (var(--trailHeight) * var(--blockSize))),
-			calc(var(--trailHeight) * var(--blockSize) * -1);
-	}
-	100% {
-		-webkit-mask-position-y: 0,
-			calc(100% + (var(--trailHeight) * var(--blockSize))),
-			calc(100% + (var(--trailHeight) * var(--blockSize))),
-			calc(100% + (var(--trailHeight) * var(--blockSize)));
-	}
-} */
-
-/* Text Hover Effect */
-/* .textHoverEffect {
-	z-index: 1;
-}
-.textHoverEffect > div {
-	width: 100%;
-	text-align: center;
-	font-family: "Noto Sans", sans-serif;
-	user-select: none;
-}
-.textHoverEffect span {
-	--add: 0;
-	display: inline-block;
-	line-height: 100%;
-	cursor: crosshair;
-	font-weight: calc(300 + 600 * var(--add));
-	font-variation-settings: "wdth" calc(62.5 + 37.5 * var(--add));
-	text-transform: uppercase;
-	font-size: clamp(4.5rem, 12.5vw + 1px, 10rem);
-	color: hsl(99deg, 1%, calc(90% + 20% * var(--add)));
-	text-shadow: 0 0 max(25px, 1.3020833333vw) hsla(0, 0%, 100%, 0.8);
-	transition: font-weight 0.25s, font-variation-settings 0.25s;
-}
-.textHoverEffect span:hover {
-	--add: 1;
-}
-.textHoverEffect span:hover + span,
-.textHoverEffect span:has(+ span:hover) {
-	--add: 0.5;
-}
-.textHoverEffect span:hover + span + span,
-.textHoverEffect span:has(+ span + span:hover) {
-	--add: 0.25;
-} */
-
 .linkIcon {
 	background-image: linear-gradient(
 			-45deg,
@@ -231,6 +146,23 @@ body {
 	--imageHoverColorStop: 100%;
 }
 
+.galleryBentoGrid {
+	grid-template-areas: none;
+}
+@media (min-width: 1280px) {
+	.galleryBentoGrid {
+		grid-template-areas:
+			"gallery one"
+			"two one"
+			"two three"
+			"four three"
+			"five five"
+			"five five"
+			"six seven"
+			"six bye";
+	}
+}
+
 @keyframes scrollIconBounce {
 	0%,
 	45%,
@@ -242,5 +174,10 @@ body {
 	60% {
 		transform: translateY(50%);
 		animation-timing-function: ease-out;
+	}
+}
+@keyframes gridBgMove {
+	to {
+		background-position-y: var(--blockSize), var(--blockSize);
 	}
 }
