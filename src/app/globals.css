@@ -7,21 +7,6 @@
 	inherits: false;
 	initial-value: 0%;
 }
-/* @property --heroTextColorStop {
-	syntax: "<percentage>";
-	inherits: false;
-	initial-value: 4%;
-}
-@property --heroTextColorOne {
-	syntax: "<color>";
-	inherits: false;
-	initial-value: hsl(0, 0%, 100%, 4%);
-}
-@property --heroTextColorTwo {
-	syntax: "<color>";
-	inherits: false;
-	initial-value: hsl(0, 0%, 0%, 4%);
-} */
 
 :root {
 	--foreground-rgb: 0, 0, 0;
@@ -37,42 +22,14 @@
 
 /* Main */
 
-/* .heroSection > h1 > span > span {
-	--heroTextColorStop: 4%;
-	color: transparent;
-	-webkit-text-stroke: 1px hsl(0, 0%, 90%, 0.1);
-	background-clip: text;
-	background-image: linear-gradient(
-		var(--heroTextColorOne),
-		var(--heroTextColorTwo)
-	);
-	transition: --heroTextColorOne 0.25, --heroTextColorTwo 0.25;
-}
-.heroSection > h1 > span > span:hover {
-	--heroTextColorOne: hsl(0, 0%, 100%, 50%);
-	--heroTextColorTwo: hsl(0, 0%, 0%, 50%);
-} */
-
-.heroTwo {
-	clip-path: circle(0%);
-	animation: circleReveal linear forwards;
-	animation-timeline: scroll();
-	animation-range: 0 100vh;
-}
-
-@keyframes circleReveal {
-	to {
-		clip-path: circle(100%);
-	}
-}
-
 .gridBgWrapper {
-	--blockSize: calc(25vw);
-	--borderWidth: 2px;
+	--blockSize: calc(12.5vw);
+	--borderWidth: 1px;
 	--borderColor: hsl(0, 0%, 100%, 0.1);
 	--bgColor: var(--background);
 
-	perspective: 1800px;
+	/* perspective: calc(100vh / 2); */
+	perspective: 1400px;
 	overflow: hidden;
 
 	& * {
@@ -82,7 +39,8 @@
 
 .gridBg {
 	position: absolute;
-	inset: -200vmax;
+	/* inset: -200vmax; */
+	inset: 0 0 -10vmax 0;
 	background-attachment: fixed;
 	background-color: var(--bgColor);
 	background-image: linear-gradient(
@@ -100,19 +58,19 @@
 	/* background-repeat: round; */
 	/* background-position-x: calc(var(--blockSize) * 0.5 * -1); */
 	animation: gridBgMove 3s infinite linear;
-	transform-origin: center;
-	transform: rotateX(60deg);
+	transform-origin: top;
+	transform: rotateX(45deg);
 }
 .gridBgFade {
 	background-image: linear-gradient(
 			0deg,
-			var(--background) 5%,
+			var(--background) 10%,
 			transparent 25%
 		),
-		linear-gradient(-60deg, var(--background) 10%, transparent 25%),
-		linear-gradient(-30deg, var(--background) 10%, transparent 25%),
-		linear-gradient(60deg, var(--background) 10%, transparent 25%),
-		linear-gradient(30deg, var(--background) 10%, transparent 25%);
+		linear-gradient(-60deg, var(--background) 15%, transparent 25%),
+		linear-gradient(-30deg, var(--background) 15%, transparent 25%),
+		linear-gradient(60deg, var(--background) 15%, transparent 25%),
+		linear-gradient(30deg, var(--background) 15%, transparent 25%);
 }
 
 .linkIcon {

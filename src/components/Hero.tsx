@@ -14,11 +14,13 @@ function Links({
 	href,
 	bg,
 	grow,
+	blank,
 }: Readonly<{
 	children: React.ReactNode
 	href: string
 	bg: string
 	grow?: boolean
+	blank?: boolean
 }>) {
 	return (
 		<Link
@@ -26,7 +28,8 @@ function Links({
 			className={`font-bold text-[hsl(0,0%,65%)] p-2.5 rounded-lg text-center ${
 				grow && "grow"
 			}`}
-			style={{ backgroundColor: bg }}
+			style={{ background: bg }}
+			target={blank ? "_blank" : "_self"}
 		>
 			{children}
 		</Link>
@@ -82,26 +85,30 @@ export default function Hero() {
 						href="https://drive.google.com/file/d/13fTyVKtEX3o-hC24wKJnxQJT1fXjh0Wk/view?usp=sharing"
 						bg="white"
 						grow
+						blank
 					>
 						<span className="text-black text-lg">resume</span>
 					</Links>
 					<Links
-						href="https://www.instagram.com/milind_537/"
-						bg="hsl(0,0%,100%,0.1)"
+						href="https://www.linkedin.com/in/milindpithadia/"
+						bg="linear-gradient(hsl(0 0% 100% / 18%), hsl(0 0% 100% / 9%))"
+						blank
 					>
-						<Instagram />
+						<LinkedIn />
 					</Links>
 					<Links
 						href="https://codepen.io/milind537"
-						bg="hsl(0,0%,100%,0.1)"
+						bg="linear-gradient(hsl(0 0% 100% / 18%), hsl(0 0% 100% / 9%))"
+						blank
 					>
 						<Codepen />
 					</Links>
 					<Links
-						href="https://www.linkedin.com/in/milindpithadia/"
-						bg="hsl(0,0%,100%,0.1)"
+						href="https://www.instagram.com/milind_537/"
+						bg="linear-gradient(hsl(0 0% 100% / 18%), hsl(0 0% 100% / 9%))"
+						blank
 					>
-						<LinkedIn />
+						<Instagram />
 					</Links>
 				</div>
 			</div>

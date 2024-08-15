@@ -2,7 +2,7 @@ import React from "react"
 
 export default function Gallery() {
 	return (
-		<section className="gallerySection | text-[hsl(240,8%,85%)] pb-6">
+		<section className="gallerySection | text-[hsl(240,8%,85%)] pb-32">
 			<div className="galleryWrapper | max-w-[1100px] mx-auto">
 				<div className="galleryBentoGrid | mt-5 grid gap-6 grid-rows-[repeat(8,auto)] xl:grid-cols-[repeat(2,1fr)] px-2">
 					<h2 className="text-[clamp(3.5rem,8.8vw_+_1px,7rem)] text-transparent bg-clip-text bg-gradient-to-r from-transparent to-white font-semibold px-6 py-2">

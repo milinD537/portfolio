@@ -93,7 +93,7 @@ function ProjectCard({
 }
 export default function Projects() {
 	return (
-		<section className="projectsSection | text-[hsl(240,8%,85%)] pb-6">
+		<section className="projectsSection | text-[hsl(240,8%,85%)] pb-32">
 			<div className="projectsWrapper | max-w-[1100px] mx-auto">
 				<h1 className="text-[clamp(3.5rem,8.8vw_+_1px,7rem)] font-semibold px-6 py-2">
 					Projects

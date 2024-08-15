@@ -25,7 +25,7 @@ export default function RootLayout({
 				<Provider>
 					<Lenis>
 						<GridBackground />
-						<div className="gridBgFade | h-screen sticky top-0 bg-[radial-gradient(ellipse_at_50%_0,red,var(--background)_75%)]s z-10"></div>
+						<div className="gridBgFade | h-screen sticky top-0 z-10"></div>
 						<div className="wrapper | z-20 max-w-screen-[1440px] relative">
 							<SideNav />
 							<TransitionSlider>{children}</TransitionSlider>
