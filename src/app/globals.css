@@ -120,6 +120,14 @@
 			"six bye";
 	}
 }
+.galleryBentoGrid > img {
+	transition-property: filter, transform;
+	transition-duration: 300ms;
+}
+.galleryBentoGrid:has(img:hover) > img:not(:hover) {
+	filter: grayscale(100%);
+	transform: scale(0.99);
+}
 
 @keyframes scrollIconBounce {
 	0%,

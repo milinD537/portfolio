@@ -36,7 +36,7 @@ export default function Gallery() {
 					<img
 						src="/images/bento-six.png"
 						alt=""
-						className="w-full h-full object-cover object-center xl:[grid-area:six]"
+						className="w-full aspect-square ~h-full object-cover object-center xl:[grid-area:six] ~grayscale"
 					/>
 					<img
 						src="/images/bento-seven.png"

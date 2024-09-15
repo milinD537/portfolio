@@ -1,10 +1,4 @@
-import {
-	CatchMeAt,
-	Codepen,
-	Instagram,
-	LinkedIn,
-	MouseScroll,
-} from "@/svgs/svgs"
+import { CatchMeAt, Codepen, Github, LinkedIn, MouseScroll } from "@/svgs/svgs"
 import { revamped } from "@/utils/fonts"
 import Link from "next/link"
 import React from "react"
@@ -15,19 +9,21 @@ function Links({
 	bg,
 	grow,
 	blank,
+	hoverEffect,
 }: Readonly<{
 	children: React.ReactNode
 	href: string
 	bg: string
 	grow?: boolean
 	blank?: boolean
+	hoverEffect?: boolean
 }>) {
 	return (
 		<Link
 			href={href}
 			className={`font-bold text-[hsl(0,0%,65%)] p-2.5 rounded-lg text-center ${
 				grow && "grow"
-			}`}
+			} ${hoverEffect && "transition-transform hover:-translate-y-0.5"}`}
 			style={{ background: bg }}
 			target={blank ? "_blank" : "_self"}
 		>
@@ -82,7 +78,7 @@ export default function Hero() {
 				</div>
 				<div className="mt-4 flex items-center gap-2">
 					<Links
-						href="https://drive.google.com/file/d/13fTyVKtEX3o-hC24wKJnxQJT1fXjh0Wk/view?usp=sharing"
+						href="https://drive.google.com/file/d/11smbg0h9unXHXNvq9j_HfLBEQx6YZJQO/view?usp=sharing"
 						bg="white"
 						grow
 						blank
@@ -90,25 +86,28 @@ export default function Hero() {
 						<span className="text-black text-lg">resume</span>
 					</Links>
 					<Links
-						href="https://www.linkedin.com/in/milindpithadia/"
+						href="https://github.com/milinD537"
 						bg="linear-gradient(hsl(0 0% 100% / 18%), hsl(0 0% 100% / 9%))"
 						blank
+						hoverEffect
 					>
-						<LinkedIn />
+						<Github />
 					</Links>
 					<Links
 						href="https://codepen.io/milind537"
 						bg="linear-gradient(hsl(0 0% 100% / 18%), hsl(0 0% 100% / 9%))"
 						blank
+						hoverEffect
 					>
 						<Codepen />
 					</Links>
 					<Links
-						href="https://www.instagram.com/milind_537/"
+						href="https://www.linkedin.com/in/milindpithadia/"
 						bg="linear-gradient(hsl(0 0% 100% / 18%), hsl(0 0% 100% / 9%))"
 						blank
+						hoverEffect
 					>
-						<Instagram />
+						<LinkedIn />
 					</Links>
 				</div>
 			</div>
