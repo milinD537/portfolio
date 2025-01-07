@@ -2,11 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-@property --imageHoverColorStop {
+/* @property --imageHoverColorStop {
 	syntax: "<percentage>";
 	inherits: false;
 	initial-value: 0%;
-}
+} */
 
 :root {
 	--foreground-rgb: 0, 0, 0;

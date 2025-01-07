@@ -6,6 +6,7 @@ import { Provider } from "jotai"
 import GridBackground from "@/components/GridBackground"
 import SideNav from "@/components/SideNav"
 import TransitionSlider from "@/components/TransitionSlider"
+import CustomProperties from "@/components/CustomProperties"
 
 export const metadata: Metadata = {
 	title: "Milind's Portfolio",
@@ -27,6 +28,7 @@ export default function RootLayout({
 						<GridBackground />
 						<div className="gridBgFade | h-screen sticky top-0 z-10"></div>
 						<div className="wrapper | z-20 max-w-screen-[1440px] relative">
+							<CustomProperties />
 							<SideNav />
 							<TransitionSlider>{children}</TransitionSlider>
 						</div>
