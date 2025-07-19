@@ -78,7 +78,7 @@ export default function Hero() {
 				</div>
 				<div className="mt-4 flex items-center gap-2">
 					<Links
-						href="https://drive.google.com/file/d/11smbg0h9unXHXNvq9j_HfLBEQx6YZJQO/view?usp=sharing"
+						href="https://drive.google.com/file/d/1JDrSnT_mfy7padn1usaEfzzEM_IVJf1_/view?usp=sharing"
 						bg="white"
 						grow
 						blank
